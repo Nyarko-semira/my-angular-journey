@@ -1,1 +1,76 @@
-<p>signup-page works!</p>
+
+    <div class="container">
+        <h1 class="text1">SIGN UP</h1>
+        <form [formGroup]="singupForm" (ngSubmit)="submit()">
+            <div class="user-info">
+                <div class="text-box">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" formControlName="firstname" placeholder="Enter Full Name...">
+        
+                    @if(singupForm.get("firstname")?.errors?.["required"]) {
+                        <small>Error</small>
+
+                    }
+                </div>
+
+                <div class="text-box">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" formControlName="lastname" placeholder="Enter Full Name...">
+                    @if(singupForm.get("lastname")?.errors?.["required"]){
+                        <small>Error</small>
+                    }
+                
+                </div>
+
+                <div class="text-box">
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" formControlName="email" placeholder="Samira@gmail.com">
+
+                    @if(singupForm.get("email")?.errors?.["required"]){
+                        <small>Error</small>
+                    } 
+                      
+                    @else if(singupForm.get("email")?.errors?.["email"]){
+                        <small>email invalid</small>
+
+                    }
+                </div>
+                
+                <div class="text-box">
+                    <label for="phonen">Phone Number</label>
+                    <input type="text" id="phonen" formControlName="phonen" placeholder="Enter PhoneNumber">
+
+                    @if(singupForm.get("email")?.errors?.["minlength"]){
+                        <small>Error</small>
+                    } 
+                      
+                </div>
+              
+                <div class="text-box">
+                    <label for="psd">Password</label>
+                    <input type="password" id="psd" formControlName="password" placeholder="Enter Password">
+                   
+                    @if(singupForm.get("password")?.errors?.["required"]){
+                        <small>Error</small>
+                    } 
+                      
+                    @else if(singupForm.get("password")?.errors?.["minlength"]){
+                        <small>minlength should be 8</small>
+
+                    
+                    }
+                    
+                  
+
+                </div>
+            
+            </div>
+        
+            <div class="form-submit">
+                <input type="submit" value="submit">
+            </div>
+        </form>
+    
+    </div>
+    
+ 
