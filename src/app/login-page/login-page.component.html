@@ -1,1 +1,30 @@
+
+
+<body>
 <p>login-page works!</p>
+
+<h2>Login Form</h2>
+
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+ 
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" formControlName="username" >
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" formControlName="password2">
+      <div class ="loginsubmit"> 
+    <input type="submit" value="submit">
+    </div> 
+    <label>
+      <input type="checkbox" checked="checked" formControlName="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" >
+    <button type="button" class="cancelbtn" value="Cancel">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+</body>
