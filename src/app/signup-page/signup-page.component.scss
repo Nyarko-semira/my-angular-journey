@@ -1,0 +1,131 @@
+// form label {
+//     display: flex;
+//     margin-top: 20px;
+// }
+// // .web{
+// //     width: 600px;
+// //     height: 500px;
+// //     background-color: rgb(199, 186, 186);
+// //     margin-left: 50px;
+// // }
+
+// input[type="submit"]{
+//     display: flex;
+//     margin-top: 10px;
+//     background-color: pink;
+//     width: 60px;
+// }
+
+// // h2{
+// //     text-align: center;
+// // }
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(102, 85, 88);
+
+}
+.container{
+    width: 100%;
+    max-width:650px;
+    margin-left: 30%;
+    background: rgba(0,0,0,0.5);
+    padding: 28px;
+    margin: 0 28px;
+    border-radius: 10px;
+    box-shadow: inset -2px 2px 2px white;
+
+}
+.text1{
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 6px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    border-bottom:solid 1px white;
+}
+
+.user-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.text-box:nth-child(2n){
+    justify-content:end;
+}
+
+
+.text-box{
+    display: flex;
+    flex-wrap: wrap;
+    width:50%;
+    padding-bottom: 15px;
+
+
+}
+.text-box label{
+    width:95%;
+     color: white;
+     font-size: 20px;
+     font-weight: 400;
+     margin: 5px 0;
+}
+
+.text-box input{
+    height: 40px;
+    width: 95%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding:0 10px;
+
+}
+.form-submit{
+    margin-top:20px;
+
+}
+.form-submit input{
+    display: block;
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius:3px;
+    color: chocolate;
+    // background-color:lightsalmon;
+
+}
+.form-submit input:hover{
+    background: grey;
+    color: chocolate;
+}
+
+// .ng-valid[required], .ng-valid.required  {
+//     border: 20px solid #42A948; /* green */
+//   }
+  
+//   .ng-invalid:not(form)  {
+//     border: 20px solid #a94442; /* red */
+ 
+//   }
+
+small {
+    color: red;
+    
+}
+
