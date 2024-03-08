@@ -9,6 +9,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
-  HOME = "VIS";
+ 
 
 }
