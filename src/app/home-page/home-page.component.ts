@@ -10,6 +10,13 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
- 
+  date = new Date()
+  date1 = new Date(new Date().setHours(1))
+  date2 =  new Date(new Date().setHours(2))
+  date3 = new Date(new Date().setHours(3))
+ date4 = new Date(new Date().setHours(4))
+ date5 = new Date(new Date().setHours(5))
+ date6 = new Date(new Date().setHours(6))
+ date7 = new Date(new Date().setHours(7))
 
 }
