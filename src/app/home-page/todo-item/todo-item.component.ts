@@ -10,7 +10,13 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       <h4><b>{{name}}</b></h4>
       <p>{{time}}</p>
       <p>{{type}}</p>
-      <p>{{status}}</p>
+      @if(isDone){
+        <p>done</p>
+      }
+      @else{
+        <p>not done</p>
+      }
+    
     </div>
   </div>`,
   styleUrl: './todo-item.component.css',
@@ -20,11 +26,12 @@ export class TodoItemComponent {
   @Input()
   name!:string
   @Input()
-  time!: string
+  time!: Date
   @Input()
   type!: string
   @Input()
-  status!: string
-
+  isDone!: boolean
+  
+  
   
 }
