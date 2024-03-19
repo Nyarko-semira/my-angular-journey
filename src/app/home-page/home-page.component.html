@@ -2,16 +2,12 @@
 
 <div class="content">
   <!-- <div class="row1"> -->
-  <app-todo-item name="kofi" [time]="date"  type="lunch" [isDone]="true"/>
-  <app-todo-item name="Grace"  [time]="date1" type="breakfast" [isDone]="true"/>
-  <!-- </div> -->
-  <!-- <div class="row2"> -->
-  <app-todo-item  name="serwaa" [time]="date2"  type="dinner" [isDone]="false"/>
-  <app-todo-item  name="jorichi" [time]="date3" type="breakfast"  [isDone]="true"/>
-  <app-todo-item  name="ama foriwaa" [time]="date4" type="dinnner" [isDone]="false"/>
-  <app-todo-item  name="kwame sika"  [time]="date5"  type="lunch" [isDone]="false"/>
-  <app-todo-item  name="sika"  [time]="date6" type="super" [isDone]="true"/>
-  <app-todo-item  name="decodeco" [time]="date7" type="breakfast" [isDone]="true"/>
+    @for (item of todoItems; track $index) {
+      <app-todo-item [name]="item.name" [time]="item.time"  [type]="item.type" [isDone]="item.isDone"/>
+
+    }
+  
+
   <!-- </div> -->
 
   <h5> Go to homepage?<a routerLink="/login">login</a></h5> 
