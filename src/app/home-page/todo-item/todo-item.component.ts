@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -7,14 +7,14 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   imports: [CommonModule],
   template: ` <div class="card">
     <div class="container">
-      <h4><b>{{name}}</b></h4>
-      <p>{{time}}</p>
+      <h4><b>{{name | uppercase}}</b></h4>
+      <p>{{time | date:'shortTime'}}</p>
       <p>{{type}}</p>
       @if(isDone){
-        <p>done</p>
+        <p>Done</p>
       }
       @else{
-        <p>not done</p>
+        <p>Not Done</p>
       }
     
     </div>
@@ -31,7 +31,9 @@ export class TodoItemComponent {
   type!: string
   @Input()
   isDone!: boolean
-  
+
   
   
 }
+
+
