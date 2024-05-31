@@ -100,12 +100,12 @@ body{
 }
 .form-submit input{
     display: block;
-    width: 500px;
+    width: 300px;
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 150px;
     font-size: 20px;
     padding: 10px;
-    border-radius:3px;
+    border-radius:10px;
     color: chocolate;
     // background-color:lightsalmon;
 
@@ -124,8 +124,13 @@ body{
  
 //   }
 
-small {
-    color: red;
+// small {
+//     color: red;
     
+// }
+
+
+h5{
+    text-align: center;
 }
 

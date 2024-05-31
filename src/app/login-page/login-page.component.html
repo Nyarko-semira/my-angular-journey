@@ -7,11 +7,11 @@
  
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
+    <label for="uname" class="astericks"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" [(ngModel)]="login.username" name="username" required >
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" [(ngModel)]="login.password2" name="password2" required maxlength="8" >
+    <label for="psw"  class="astericks"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" [(ngModel)]="login.password" name="password" required maxlength="8" >
       <div class ="loginsubmit"> 
     <input type="submit" value="submit">
     </div> 
@@ -29,5 +29,9 @@
 <h5>Dont have an account ?<a routerLink="/signup">Sign up</a></h5>
 
 </div>
+
+
+
+
 
 

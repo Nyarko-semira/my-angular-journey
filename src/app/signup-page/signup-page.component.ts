@@ -17,17 +17,18 @@ export class SignupPageComponent {
   http = inject(HttpClient);
   router = inject(Router);
   signupForm = new FormGroup({
-    firstname: new FormControl('kofi',Validators.required),
-    lastname: new FormControl('mensah',[Validators.required]),
+    firstname: new FormControl(null,Validators.required),
+    lastname: new FormControl(null,[Validators.required]),
     email: new FormControl(null,[Validators.required,Validators.email]),
     phonen : new FormControl(null,[Validators.minLength(10), Validators.maxLength(10)]),
     password: new FormControl(null,[Validators.required,Validators.minLength(8)]),
+    Cpassword: new FormControl(null,[Validators.required,Validators.minLength(8)]),
   
   });
 
 
    submit() {
-    if(this.signupForm.status==='VALID')
+  if(this.signupForm.valid){
     console.log(this.signupForm.value, this.signupForm)
     this.http
     .post('https://jsonplaceholder.typicode.com/todos', this.signupForm.value)
@@ -43,6 +44,6 @@ export class SignupPageComponent {
     });
 }
 
-
+   }
    }
 

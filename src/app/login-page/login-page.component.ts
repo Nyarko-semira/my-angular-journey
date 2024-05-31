@@ -28,14 +28,14 @@ export class LoginPageComponent {
   //   remember : new FormControl()
 
   //  })
-  login = { username: null, password2: null, remember: false };
+  login = { username: null, password: null, remember: false };
   submit(form: NgForm) {
     if (form.status === 'VALID') {
       this.http
         .post('https://jsonplaceholder.typicode.com/todos', form.value)
         .subscribe({
           next: (res) => {
-            console.log(res);
+            console.log('res',res);
             this.router.navigateByUrl('homepage');
           },
 

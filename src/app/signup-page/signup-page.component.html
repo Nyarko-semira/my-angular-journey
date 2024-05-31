@@ -4,40 +4,45 @@
         <form [formGroup]="signupForm" (ngSubmit)="submit()">
             <div class="user-info">
                 <div class="text-box">
-                    <label for="fname">First Name</label>
+                    <label for="fname" class="astericks">First Name</label>
                     <input type="text" id="fname" formControlName="firstname" placeholder="Enter Full Name...">
-        
-                    @if(signupForm.get("firstname")?.errors?.["required"]) {
-                        <small>first name required</small>
-
+                    @if(signupForm.get("firstname"); as fName) {
+                        @if(fName?.errors?.["required"] && fName?.dirty) {
+                            <small>first name required</small>
+                        }
                     }
+        
                 </div>
 
                 <div class="text-box">
-                    <label for="lname">Last Name</label>
+                    <label for="lname"class="astericks">Last Name</label>
                     <input type="text" id="lname" formControlName="lastname" placeholder="Enter Full Name...">
-                    @if(signupForm.get("lastname")?.errors?.["required"]){
+                    @if(signupForm.get("lastname"); as lname) {
+                    @if(lname?.errors?.["required"] && lname?.dirty){
                         <small>last name required</small>
                     }
-                
+                }
                 </div>
 
                 <div class="text-box">
-                    <label for="Email">Email</label>
+                    <label for="Email" class="astericks" >Email</label>
                     <input type="email" id="Email" formControlName="email" placeholder="Samira@gmail.com">
+                    @if(signupForm.get("email"); as mail) {
 
-                    @if(signupForm.get("email")?.errors?.["required"]){
+                    @if(mail?.errors?.["required"] && mail?.dirty){
                         <small>Email required </small>
                     } 
+                
                       
-                    @else if(signupForm.get("email")?.errors?.["email"]){
+                    @else if(mail?.errors?.["email"]){
                         <small>email invalid</small>
 
                     }
+                    }
                 </div>
                 
                 <div class="text-box">
-                    <label for="phonen">Phone Number</label>
+                    <label for="phonen" class="astericks" >Phone Number</label>
                     <input type="text" id="phonen" formControlName="phonen" placeholder="Enter PhoneNumber">
 
                     @if(signupForm.get("phonen")?.errors?.["minlength"] || signupForm.get("phonen")?.errors?.["maxlength"]){
@@ -47,31 +52,53 @@
                 </div>
               
                 <div class="text-box">
-                    <label for="psd">Password</label>
-                    <input type="password" id="psd" formControlName="password" placeholder="Enter Password">
+                    <label for="psd" class="astericks">Password</label>
+                    <input type="password" id="psd" formControlName="password" placeholder="Enter Password" >
+                    @if(signupForm.get("password"); as word) {
                    
-                    @if(signupForm.get("password")?.errors?.["required"]){
+                    @if(word?.errors?.["required"] && word?.dirty){
                         <small> Password required</small>
                     } 
                       
-                    @else if(signupForm.get("password")?.errors?.["minlength"]){
+                    @else if(word?.errors?.["minlength"]){
                         <small>minlength should be 8</small>
 
                     
                     }
                     
-                  
+                }
 
                 </div>
-            
+
+                <div class="text-box">
+                    <label for="psd" class="astericks">Comfirm Password</label>
+                    <input type="password" id="psd" formControlName="Cpassword" placeholder="Comfirm Password" >
+                    @if(signupForm.get("Cpassword"); as pword) {
+                   
+                        @if(pword?.errors?.["required"] && pword?.dirty){
+                            <small> Password required</small>
+                        } 
+                          
+                        @else if(pword?.errors?.["minlength"]){
+                            <small>minlength should be 8</small>
+    
+                    
+                        }
+
+                    
+                    }
+                  </div>
+
+                 
             </div>
         
             <div class="form-submit">
                 <input type="submit" value="submit">
             </div>
         </form>
-        <div>
+        <div class="ddd">
        <h5>Already have an account ?<a routerLink="/login">login</a></h5> 
+       </div>
        
     </div>
     
